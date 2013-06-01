@@ -20,7 +20,7 @@
 
 AC_PREREQ(2.57)
 AC_INIT([General Authorization Example Plugin], [0.0.1], okoeroo@gmail.com)
-#AC_CONFIG_MACRO_DIR([autodir])
+AC_CONFIG_MACRO_DIR([autodir])
 AM_INIT_AUTOMAKE([1.6.3 subdir-objects foreign])
 AC_CONFIG_SRCDIR([genauthz_simple_curl_call.h.in])
 
