@@ -22,7 +22,7 @@ AC_PREREQ(2.57)
 AC_INIT([General Authorization Example Plugin], [0.0.1], okoeroo@gmail.com)
 #AC_CONFIG_MACRO_DIR([autodir])
 AM_INIT_AUTOMAKE([1.6.3 subdir-objects foreign])
-#AC_CONFIG_SRCDIR([src/generalauthorization.h.in])
+AC_CONFIG_SRCDIR([genauthz_simple_curl_call.h.in])
 
 # Notices.
 AC_COPYRIGHT([Copyright (c) 2013 of Oscar Koeroo
@@ -343,5 +343,7 @@ AC_SUBST(ADD_THESE_DEFINES)
 
 # Configuration items
 AC_CONFIG_FILES([Makefile])
+
+AC_CONFIG_HEADERS([genauthz_simple_curl_call.h])
 
 AC_OUTPUT
