@@ -5,7 +5,7 @@ int
 example_plugin_init(tq_xacml_callout_t *);
 void
 example_plugin_uninit(tq_xacml_callout_t *);
-void
+int
 example_plugin_rule_hit(request_mngr_t *, tq_xacml_rule_t *, tq_xacml_callout_t *);
 
 
@@ -23,7 +23,8 @@ example_plugin_init(tq_xacml_callout_t *callout) {
         printf("Argv[%d]: %s\n", i, argv[i]);
     }
 
-    test = strdup("http://www.slashdot.com");
+    /* test = strdup("http://www.slashdot.com"); */
+    test = strdup("http://localhost/verlanglijstje/");
     genauthz_callout_set_aux(callout, test);
     return 0;
 }
@@ -34,7 +35,7 @@ example_plugin_uninit(tq_xacml_callout_t *callout) {
     return;
 }
 
-void
+int
 example_plugin_rule_hit(request_mngr_t *request_mngr,
                         tq_xacml_rule_t *rule,
                         tq_xacml_callout_t *callout) {
@@ -66,7 +67,7 @@ example_plugin_rule_hit(request_mngr_t *request_mngr,
         curl_easy_cleanup(curl);
     }
 
-    return;
+    return 0;
 }
 
 
