@@ -71,6 +71,19 @@ AC_CHECK_FUNCS([setenv strchr strcspn strdup strerror strncasecmp strpbrk strspn
 # dlopen library
 #AC_CHECK_LIB([dl], [dlopen])
 
+
+dnl allow the setting of a different path for the plug-ins
+dnl Makefiles should set the plugindir to $MODULEDIR.
+AC_ARG_WITH([moduledir],
+    [AS_HELP_STRING([--with-moduledir=path],
+        [Specify the install location of the plug-ins])],
+[
+    AC_SUBST([MODULEDIR], [$withval])
+],
+[
+    AC_SUBST([MODULEDIR], ['${libdir}/genauthz'])
+])
+
 ####### CFLAGS BEGIN
 my_save_cflags="$CFLAGS"
 
